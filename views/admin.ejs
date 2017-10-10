@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  head of page(head) -->
+  <% include partials/head.ejs %>
+
+<!--  head of page Ends   -->  
+
+
+  <body>
+    
+<div class="container">
+  
+
+ 
+<div class="jumbotron">
+<h1 align="center"><font size="52" color="#2d66f1" face="AR DESTINE">CIT Digital Library Admin</font></h1>
+   
+
+
+
+<hr/>
+
+  <a class="nav-link" href="/alogin" >Register other Admin</a>
+  <p class="lead">
+    <button class="btn btn-primary btn-sm" onclick="fun1()" >Add content</button>
+	<button class="btn btn-primary btn-sm" onclick="fun2()" >Add Video link </button>
+	<button class="btn btn-primary btn-sm" onclick="fun3()" >Add pdf link</button>
+  </p>
+  <hr/>
+   
+  
+
+   <p class="lead" id="learn">
+    	
+    </p>
+
+</div>
+<!-- footer  -->
+  <% include partials/footer.ejs %>
+
+</div>
+<script>
+   var count,count1,count2,count3=0;
+document.getElementById("learn").innerHTML='<form action="tutorial" method="post"><div class="form-group">  <label for="sel1">Subject</label> <select class="form-control" id="sel1" name="subject">   <option>System Software</option>   <option>Data Structure and Progrmming Methodology</option>  <option>System Analysis And Design</option>  <option>Digital Circuit Design</option> <option>Data Communication</option> <option>Discrete Mathematics</option></select></div><div class="form-row">    <div class="form-group col-md-8">     <label for="inputCity" class="col-form-label">Topic</label>      <input type="text" class="form-control" name="topic"id="inputCity" required>    </div>   <div class="form-group col-md-2">    <div class="form-group">  <label for="sel1">Branch</label> <select name="branch" class="form-control" id="sel1">    <option>CSE</option>  <option>ME</option>  <option>CE</option>   <option>ECE</option> <option>EeE</option>  </select></div></div>   <div class="form-group col-md-2">    <div class="form-group">   <label for="sel1">Sem</label> <select class="form-control" id="sel1" name="sem">    <option>1</option>  <option>2</option>  <option>3</option>   <option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>  </select></div> </div>  </div> <label for="exampleFormControlTextarea1">Content</label><br/> <div class="form-group">    <label for="exampleFormControlTextarea1">paragraph 1</label>   <textarea class="form-control" name="p1" id="exampleFormControlTextarea1" rows="6" required></textarea>  </div><div class="form-group">    <label for="exampleFormControlTextarea1">paragraph 2</label>    <textarea class="form-control" name="p2" id="exampleFormControlTextarea1" rows="6"></textarea> </div><div class="form-group">   <label for="exampleFormControlTextarea1">paragraph 3</label>    <textarea class="form-control" name="p3" id="exampleFormControlTextarea1" rows="6"></textarea>  </div> <div class="form-group"><label for="inputAddress2" class="col-form-label">Image Link</label><input type="text" class="form-control" id="img" name="img" placeholder="image link"> </div><button type="submit" class="btn btn-primary">Submit</button>  <br/></form>';
+	       
+var str='</hr><div><form action="pdf" method="post"><div class="form-group">  <label for="sel1">Subject</label> <select name="subject" class="form-control" id="sel1">    <option>System Software</option>   <option>Data Structure and Progrmming Methodology</option>  <option>System Analysis And Design</option>  <option>Digital Circuit Design</option> <option>Data Communication</option> <option>Discrete Mathematics</option> </select></div>  <div class="form-row">    <div class="form-group col-md-6"> <label for="sel1">Branch</label> <select class="form-control" id="sel1" name="branch">    <option>CSE</option>  <option>ME</option>  <option>CE</option>   <option>ECE</option>  </select>   </div>    <div class="form-group col-md-6">   <label for="sel1">Sem</label> <select class="form-control" id="sel1" name="sem">    <option>1</option>  <option>2</option>  <option>3</option>   <option>4</option>  </select>            </div>  </div>  <div class="form-row">   <div class="form-group col-md-12">     <label class="col-form-label">Link</label>     <input type="text" class="form-control" name="link" id="inputEmail4" placeholder="Link " required></div><div class="form-group col-md-12">     <label class="col-form-label">Description</label>     <input type="text" class="form-control" name="description" id="inputEmail4" placeholder="description" required></div><button type="submit" class="btn btn-primary">submit</button></form></div> </hr>';
+ function fun1()
+        {   
+		   if(count==0){
+		 document.getElementById("learn").innerHTML='<form action="tutorial" method="post"><div class="form-group">  <label for="sel1">Subject</label> <select class="form-control" id="sel1" name="subject">   <option>System Software</option>   <option>Data Structure and Progrmming Methodology</option>  <option>System Analysis And Design</option>  <option>Digital Circuit Design</option> <option>Data Communication</option> <option>Discrete Mathematics</option></select></div><div class="form-row">    <div class="form-group col-md-8">     <label for="inputCity" class="col-form-label">Topic</label>      <input type="text" class="form-control" name="topic"id="inputCity" required>    </div>   <div class="form-group col-md-2">    <div class="form-group">  <label for="sel1">Branch</label> <select name="branch" class="form-control" id="sel1">    <option>CSE</option>  <option>ME</option>  <option>CE</option>   <option>ECE</option> <option>EeE</option>  </select></div></div>   <div class="form-group col-md-2">    <div class="form-group">   <label for="sel1">Sem</label> <select class="form-control" id="sel1" name="sem">    <option>1</option>  <option>2</option>  <option>3</option>   <option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>  </select></div> </div>  </div> <label for="exampleFormControlTextarea1">Content</label><br/> <div class="form-group">    <label for="exampleFormControlTextarea1">paragraph 1</label>   <textarea class="form-control" name="p1" id="exampleFormControlTextarea1" rows="6" required></textarea>  </div><div class="form-group">    <label for="exampleFormControlTextarea1">paragraph 2</label>    <textarea class="form-control" name="p2" id="exampleFormControlTextarea1" rows="6"></textarea> </div><div class="form-group">   <label for="exampleFormControlTextarea1">paragraph 3</label>    <textarea class="form-control" name="p3" id="exampleFormControlTextarea1" rows="6"></textarea>  </div> <div class="form-group"><label for="inputAddress2" class="col-form-label">Image Link</label><input type="text" class="form-control" id="img" placeholder="image link" name="img" > </div><button type="submit" class="btn btn-primary">Submit</button>  <br/></form>';
+         count=1;count1=0;count3=0;
+		 
+		 }
+		 else{
+		 count=0;
+		 document.getElementById("learn").innerHTML="";}}
+		 function fun3()
+        {   
+		   if(count3==0){
+		 document.getElementById("learn").innerHTML=str;
+		 count3=1;count1=0;count2=0;
+		 }
+		 else{
+		 count3=0;
+		 document.getElementById("learn").innerHTML="";}}
+
+		 
+		  function fun2()
+        {   
+		   if(count1==0){
+		 document.getElementById("learn").innerHTML='</hr><div><form action="video" method="post"><div class="form-group">  <label for="sel1">Subject</label> <select name="subject" class="form-control" id="sel1">    <option>System Software</option>   <option>Data Structure and Progrmming Methodology</option>  <option>System Analysis And Design</option>  <option>Digital Circuit Design</option> <option>Data Communication</option> <option>Discrete Mathematics</option> </select></div>  <div class="form-row">    <div class="form-group col-md-6"> <label for="sel1">Branch</label> <select class="form-control" id="sel1" name="branch">    <option>CSE</option>  <option>ME</option>  <option>CE</option>   <option>ECE</option>  </select>   </div>    <div class="form-group col-md-6">   <label for="sel1">Sem</label> <select class="form-control" id="sel1" name="sem">    <option>1</option>  <option>2</option>  <option>3</option>   <option>4</option>  </select>            </div>  </div>  <div class="form-row">   <div class="form-group col-md-12">     <label class="col-form-label">Link</label>     <input type="text" class="form-control" name="link" id="inputEmail4" placeholder="Link " required></div><div class="form-group col-md-12">     <label class="col-form-label">Description</label>     <input type="text" class="form-control" name="description" id="inputEmail4" placeholder="description" required></div><button type="submit" class="btn btn-primary">submit</button></form></div> </hr>';
+
+          count1=1;count2=0;count=0;
+		 }
+		 else{
+		 count1=0;
+		 document.getElementById("learn").innerHTML="";}}
+	</script>
+	 <% include partials/end.ejs %>
+
+  </body>
+</html>
